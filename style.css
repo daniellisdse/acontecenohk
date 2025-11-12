@@ -75,24 +75,27 @@ h2 {
 }
 
 /* Galeria */
-.fotos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.fotos img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
+.galeria img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  transition: transform 0.3s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
-.fotos img:hover {
+.galeria img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Rodapé */
 footer {
