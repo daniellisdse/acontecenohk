@@ -1,0 +1,106 @@
+/* Estilo geral */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff9c4; /* Amarelo claro */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #673ab7; /* Roxo */
+  color: white;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1.2em;
+  color: #bbdefb; /* Azul claro */
+}
+
+/* Seções */
+section {
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #3f51b5; /* Azul */
+  margin-bottom: 20px;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: #3f51b5;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #512da8; /* Roxo mais escuro */
+}
+
+/* Podcast */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Galeria */
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.fotos img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.fotos img:hover {
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  background-color: #3f51b5;
+  color: white;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
