@@ -45,10 +45,10 @@
           target="_blank" class="btn">Ouvir Podcast</a>
       </div>
     </section>
-
-    <section id="galerias">
+<section id="galerias">
     <div class="gallery-divider"></div>
 </section>
+
 <!-- Seção de Galeria -->
 <section id="galeria">
 
@@ -59,7 +59,6 @@
     <h2 class="titulo-galeria">⭐ Quiz Literário ⭐</h2>
     <a href="#" class="btn abrir-galeria" data-galeria="quiz">Abrir Galeria</a>
 
-    <!-- Imagens da galeria (escondidas) -->
     <div class="fotos-galeria" id="galeria-quiz">
       <img src="imagens/foto1.jpg">
       <img src="imagens/foto2.jpg">
@@ -86,7 +85,6 @@
     <h2 class="titulo-galeria">⭐ Top Leitoras ⭐</h2>
     <a href="#" class="btn abrir-galeria" data-galeria="top">Abrir Galeria</a>
 
-    <!-- Imagens da galeria (escondidas) -->
     <div class="fotos-galeria" id="galeria-top">
       <img src="imagens/topgeral.jpg">
       <img src="imagens/top1fund.jpg">
@@ -100,58 +98,15 @@
 
 </section>
 
-<!-- 🌟 Modal de Imagem -->
+<!-- ✅ Modal ÚNICO -->
 <div id="modal" class="modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="imagem-ampliada">
+  <img id="imagem-ampliada" class="modal-content">
 </div>
 
-
-<!-- Modal -->
-<div id="modal" class="modal" onclick="closeModal()">
-    <span class="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img">
-</div>
-    <!-- Modal ÚNICO para todas as galerias -->
-    <div id="modal" class="modal">
-      <span class="close">&times;</span>
-      <img id="imagem-ampliada" class="modal-content">
-    </div>
-
-  </main>
-
-  <footer>
-    <p>Siga o Colégio no Instagram:
-      <a href="https://instagram.com/cbxhelena" target="_blank">@cbxhelena</a>
-    </p>
-    <p>© 2025 - Acontece no HK</p>
-  </footer>
-
-  <!-- Script único do modal -->
-  <script>
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("imagem-ampliada");
-    const closeBtn = document.querySelector(".close");
-
-    document.querySelectorAll(".fotos img").forEach(img => {
-      img.addEventListener("click", () => {
-        modal.style.display = "flex";
-        modalImg.src = img.src;
-      });
-    });
-
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
+<!-- ✅ SCRIPT ÚNICO -->
 <script>
-  // Abre ou fecha galeria
+  // 👉 Alternar exibição das galerias
   document.querySelectorAll(".abrir-galeria").forEach(botao => {
     botao.addEventListener("click", function(e) {
       e.preventDefault();
@@ -159,12 +114,11 @@
       let id = this.dataset.galeria;
       let galeria = document.getElementById("galeria-" + id);
 
-      // Alterna exibição
       galeria.style.display = galeria.style.display === "grid" ? "none" : "grid";
     });
   });
 
-  // Modal
+  // 👉 Modal
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("imagem-ampliada");
   const closeBtn = document.querySelector(".close");
@@ -176,14 +130,10 @@
     });
   });
 
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
-  };
+  closeBtn.onclick = () => modal.style.display = "none";
 
-  modal.onclick = function(e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+  modal.onclick = e => {
+    if (e.target === modal) modal.style.display = "none";
   };
 </script>
 
