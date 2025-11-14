@@ -236,9 +236,9 @@ footer a {
   color: #bbb;
 }
 #podcast img {
-  width: 100px;   /* Ajuste o tamanho como quiser */
+  width: 50px;   /* Ajuste o tamanho como quiser */
   height: auto;
   display: block;
-  margin: 0 auto 15px; /* Centraliza a imagem */
-  border-radius: 10px; /* Opcional: deixa arredondado */
+  margin: 0 auto 10px; /* Centraliza a imagem */
+  border-radius: 5px; /* Opcional: deixa arredondado */
 }
