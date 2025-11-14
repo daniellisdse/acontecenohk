@@ -233,5 +233,91 @@ footer a {
 .modal-close:hover {
   color: #ddd;
 }
+/* --- SEPARAÇÃO ENTRE GALERIAS --- */
+.faixa-galeria {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #673ab7, #3f51b5, #2196f3);
+  margin: 40px 0;
+  border-radius: 5px;
+}
+
+/* Título decorado */
+.titulo-galeria {
+  font-size: 2em;
+  color: #3f51b5;
+  margin-bottom: 15px;
+  text-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+}
+
+/* Contêiner dos eventos */
+.galeria-evento {
+  margin-bottom: 50px;
+}
+
+/* Galerias escondidas inicialmente */
+.fotos-galeria {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.fotos-galeria img {
+  width: 100%;
+  max-width: 220px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fotos-galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.7); }
+  to { transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #bbb;
+}
 
 

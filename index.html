@@ -47,60 +47,65 @@
     </section>
 
     <section id="galerias">
-    <h1 class="gallery-title">Galerias de Eventos ⭐</h1>
-
-    <div class="gallery-links">
-        <a class="gallery-btn" href="galeria-quiz.html">📚 Quiz Literário</a>
-        <a class="gallery-btn" href="galeria-top-leitoras.html">🏆 Entrega Top Leitoras</a>
-        <a class="gallery-btn" href="galeria-quimica.html">🧪 Feira de Química</a>
-    </div>
-
     <div class="gallery-divider"></div>
 </section>
-<section id="galeria-quiz">
-    <h1 class="gallery-title">Quiz Literário ⭐</h1>
+<!-- Seção de Galeria -->
+<section id="galeria">
 
-    <div class="gallery-grid">
-        <img src="imagens/foto1.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto2.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto3.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto4.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto5.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto6.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto7.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto8.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto9.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto10.jpg" onclick="openModal(this.src)">
-        <img src="imagens/foto11.jpeg" onclick="openModal(this.src)">
-        <img src="imagens/foto12.jpeg" onclick="openModal(this.src)">
-        <img src="imagens/foto13.jpeg" onclick="openModal(this.src)">
-        <img src="imagens/foto14.jpeg" onclick="openModal(this.src)">
-        <img src="imagens/foto15.jpeg" onclick="openModal(this.src)">
+  <!-- 🌟 GALERIA 1 — QUIZ LITERÁRIO -->
+  <div class="faixa-galeria"></div>
+
+  <div class="galeria-evento">
+    <h2 class="titulo-galeria">⭐ Quiz Literário ⭐</h2>
+    <a href="#" class="btn abrir-galeria" data-galeria="quiz">Abrir Galeria</a>
+
+    <!-- Imagens da galeria (escondidas) -->
+    <div class="fotos-galeria" id="galeria-quiz">
+      <img src="imagens/foto1.jpg">
+      <img src="imagens/foto2.jpg">
+      <img src="imagens/foto3.jpg">
+      <img src="imagens/foto4.jpg">
+      <img src="imagens/foto5.jpg">
+      <img src="imagens/foto6.jpg">
+      <img src="imagens/foto7.jpg">
+      <img src="imagens/foto8.jpg">
+      <img src="imagens/foto9.jpg">
+      <img src="imagens/foto10.jpg">
+      <img src="imagens/foto11.jpeg">
+      <img src="imagens/foto12.jpeg">
+      <img src="imagens/foto13.jpeg">
+      <img src="imagens/foto14.jpeg">
+      <img src="imagens/foto15.jpeg">
     </div>
+  </div>
 
-    <div class="gallery-divider"></div>
+  <!-- 🌟 GALERIA 2 — TOP LEITORAS -->
+  <div class="faixa-galeria"></div>
+
+  <div class="galeria-evento">
+    <h2 class="titulo-galeria">⭐ Top Leitoras ⭐</h2>
+    <a href="#" class="btn abrir-galeria" data-galeria="top">Abrir Galeria</a>
+
+    <!-- Imagens da galeria (escondidas) -->
+    <div class="fotos-galeria" id="galeria-top">
+      <img src="imagens/topgeral.jpg">
+      <img src="imagens/top1fund.jpg">
+      <img src="imagens/top1med.jpg">
+      <img src="imagens/top2fund.jpg">
+      <img src="imagens/top2med.jpg">
+      <img src="imagens/top3fund.jpg">
+      <img src="imagens/top3med.jpg">
+    </div>
+  </div>
+
 </section>
 
-<!-- Modal -->
-<div id="modal" class="modal" onclick="closeModal()">
-    <span class="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img">
+<!-- 🌟 Modal de Imagem -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imagem-ampliada">
 </div>
-<section id="galeria-top-leitoras">
-    <h1 class="gallery-title">Entrega Top Leitoras ⭐</h1>
 
-    <div class="gallery-grid">
-        <img src="topgeral.jpg" onclick="openModal(this.src)">
-        <img src="top1fund.jpg" onclick="openModal(this.src)">
-        <img src="top1med.jpg" onclick="openModal(this.src)">
-        <img src="top2fund.jpg" onclick="openModal(this.src)">
-        <img src="top2med.jpg" onclick="openModal(this.src)">
-        <img src="top3fund.jpg" onclick="openModal(this.src)">
-        <img src="top3med.jpg" onclick="openModal(this.src)">
-    </div>
-
-    <div class="gallery-divider"></div>
-</section>
 
 <!-- Modal -->
 <div id="modal" class="modal" onclick="closeModal()">
@@ -146,17 +151,42 @@
     });
   </script>
 <script>
-function openModal(src) {
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  modal.style.display = "flex";
-  modalImg.src = src;
-}
+  // Abre ou fecha galeria
+  document.querySelectorAll(".abrir-galeria").forEach(botao => {
+    botao.addEventListener("click", function(e) {
+      e.preventDefault();
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
+      let id = this.dataset.galeria;
+      let galeria = document.getElementById("galeria-" + id);
+
+      // Alterna exibição
+      galeria.style.display = galeria.style.display === "grid" ? "none" : "grid";
+    });
+  });
+
+  // Modal
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("imagem-ampliada");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".fotos-galeria img").forEach(img => {
+    img.addEventListener("click", function() {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 </script>
+
 
 </body>
 </html>
