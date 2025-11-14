@@ -20,6 +20,8 @@
     <section id="apresentacoes">
       <h2>Teste seus conhecimentos sobre os livros lidos por nossos estudantes</h2>
       <div class="botoes duas-colunas">
+
+        <!-- SEUS LINKS (... mantive tudo igual ...) -->
         <a href="https://docs.google.com/presentation/d/1wd-EFR5S_y4Xe4-tRzpyPUX3OIGE4qCLXDSgjXgDu2w/edit?usp=sharing" target="_blank" class="btn">ADRIANA VITORIA DA SILVA CAETANO</a>
         <a href="https://docs.google.com/presentation/d/1TbUOGGOX2aRAgwcoipDRnlWWSb6Ha3YX9MhAtB4DiQU/edit?usp=sharing" target="_blank" class="btn">ALEXANDRE SANTOS DA SILVA</a>
         <a href="https://docs.google.com/presentation/d/1dwkyJJxPe2nNFHcyCtalcLRxG70-9y7yh_nNqn7C9x4/edit?usp=sharing" target="_blank" class="btn">ANA BEATRIZ HANNEMANN MARTINS</a>
@@ -30,6 +32,7 @@
         <a href="https://docs.google.com/presentation/d/11JFF3TA13EcxVKJR5XZh6bkElv-NvXIO3HLoRoWk9-M/edit?usp=sharing" target="_blank" class="btn">LUIZ HENRIQUE RODRIGUES DOS SANTOS GOMES</a>
         <a href="https://docs.google.com/presentation/d/1d3uXwfwoMOc_yZZ0RGuQwGlCWK0gJsXK5LZehiagDYk/edit?usp=sharing" target="_blank" class="btn">VALENTINA SENEN RODRIGUES</a>
         <a href="https://docs.google.com/presentation/d/1u8eq-n2CK1vt9_Xx2HbPykYTWwHAxs3_5PqE5pCrxk0/edit?usp=sharing" target="_blank" class="btn">VICTORIA DE ASSIS DE ARAGÃO</a>
+
       </div>
     </section>
 
@@ -39,39 +42,52 @@
       <div class="card">
         <img src="imagens/Inicial.png" alt="Imagem do Podcast">
         <a href="https://www.canva.com/design/DAG4iYzeRA4/uCxYQW6LRybT7SQnifVHrA/watch?utm_content=DAG4iYzeRA4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbec003d2e6"
-           target="_blank" class="btn">Ouvir Podcast</a>
+          target="_blank" class="btn">Ouvir Podcast</a>
       </div>
     </section>
 
-
-    <!-- Seção de Galeria -->
+    <!-- --- GALERIA 1 (Quiz Literário) --- -->
     <section id="galeria">
-      <h2>Galeria de Fotos</h2>
+      <h2>Galeria de Fotos — Quiz Literário</h2>
 
       <div class="fotos">
-        <img src="imagens/foto1.jpg" alt="Foto 1">
-        <img src="imagens/foto2.jpg" alt="Foto 2">
-        <img src="imagens/foto3.jpg" alt="Foto 3">
-        <img src="imagens/foto4.jpg" alt="Foto 4">
-        <img src="imagens/foto5.jpg" alt="Foto 5">
-        <img src="imagens/foto6.jpg" alt="Foto 6">
-        <img src="imagens/foto7.jpg" alt="Foto 7">
-        <img src="imagens/foto8.jpg" alt="Foto 8">
-        <img src="imagens/foto9.jpg" alt="Foto 9">
-        <img src="imagens/foto10.jpg" alt="Foto 10">
-        <img src="imagens/foto11.jpeg" alt="Foto 11">
-        <img src="imagens/foto12.jpeg" alt="Foto 12">
-        <img src="imagens/foto13.jpeg" alt="Foto 13">
-        <img src="imagens/foto14.jpeg" alt="Foto 14">
-        <img src="imagens/foto15.jpeg" alt="Foto 15">
-      </div>
-
-      <!-- Modal -->
-      <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="imagem-ampliada">
+        <img src="imagens/foto1.jpg">
+        <img src="imagens/foto2.jpg">
+        <img src="imagens/foto3.jpg">
+        <img src="imagens/foto4.jpg">
+        <img src="imagens/foto5.jpg">
+        <img src="imagens/foto6.jpg">
+        <img src="imagens/foto7.jpg">
+        <img src="imagens/foto8.jpg">
+        <img src="imagens/foto9.jpg">
+        <img src="imagens/foto10.jpg">
+        <img src="imagens/foto11.jpeg">
+        <img src="imagens/foto12.jpeg">
+        <img src="imagens/foto13.jpeg">
+        <img src="imagens/foto14.jpeg">
+        <img src="imagens/foto15.jpeg">
       </div>
     </section>
+
+    <!-- --- GALERIA 2 (Top Leitores + Feira de Química) --- -->
+    <section id="galeria2">
+      <h2>Top Leitores & Feira de Química</h2>
+
+      <div class="fotos">
+        <img src="imagens/top1.jpg">
+        <img src="imagens/top2.jpg">
+        <img src="imagens/top3.jpg">
+        <img src="imagens/quimica1.jpg">
+        <img src="imagens/quimica2.jpg">
+        <img src="imagens/quimica3.jpg">
+      </div>
+    </section>
+
+    <!-- Modal ÚNICO para todas as galerias -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img id="imagem-ampliada" class="modal-content">
+    </div>
 
   </main>
 
@@ -82,14 +98,13 @@
     <p>© 2025 - Acontece no HK</p>
   </footer>
 
-  <!-- SCRIPT ÚNICO E CORRETO DO MODAL -->
+  <!-- Script único do modal -->
   <script>
-    const imagens = document.querySelectorAll(".fotos img");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("imagem-ampliada");
     const closeBtn = document.querySelector(".close");
 
-    imagens.forEach(img => {
+    document.querySelectorAll(".fotos img").forEach(img => {
       img.addEventListener("click", () => {
         modal.style.display = "flex";
         modalImg.src = img.src;
@@ -109,3 +124,4 @@
 
 </body>
 </html>
+
