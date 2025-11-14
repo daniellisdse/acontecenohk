@@ -22,7 +22,7 @@ header h1 {
 
 .subtitulo {
   font-size: 1.2em;
-  color: #bbdefb;
+  color: #b9b85a;
 }
 
 /* Seções */
@@ -31,7 +31,7 @@ section {
 }
 
 h2 {
-  color: #3f51b5;
+  color: #b53faf;
   margin-bottom: 20px;
 }
 
