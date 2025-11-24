@@ -60,7 +60,7 @@ h2 {
 
 /* Podcast */
 .card {
-  background-color: white;
+  background-color: rgb(15, 14, 14);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   width: 260px;
